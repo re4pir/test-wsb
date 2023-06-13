@@ -1,0 +1,25 @@
+<div class="drag-container">
+  <div class="main__filters">
+    <app-filters></app-filters>
+  </div>
+  <div class="main__zoom">
+    <app-zoom></app-zoom>
+  </div>
+  <div class="drag-boundary">
+    <div
+      class="main"
+      cdkDrag
+      cdkDragPreviewContainer="parent"
+      cdkDragBoundary=".drag-boundary"
+    >
+      <div class="main__spaces">
+        <ng-container *ngFor="let place of places">
+          <app-spaces
+            [place]="place"
+            (click)="openBottomSheet(place.id)"
+          ></app-spaces>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

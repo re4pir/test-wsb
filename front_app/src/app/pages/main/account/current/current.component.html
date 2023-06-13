@@ -1,0 +1,34 @@
+<li class="el-current">
+  <div class="li-container px-3">
+    <div class="el-info">
+      <ul>
+        <li class="current_text">Место:</li>
+        <li class="current_text">Время:</li>
+        <li class="current_text">Дата:</li>
+        <li class="current_value">{{ current_el.id }}</li>
+        <li class="current_value">
+          {{ current_el.start.slice(0, 5) + "-" + current_el.end.slice(0, 5) }}
+        </li>
+        <li class="current_value">{{ current_el.day }}</li>
+
+      </ul>
+    </div>
+    <button
+      class="btn-extra"
+      [matMenuTriggerFor]="menu"
+      aria-label="Example icon-button with a menu"
+    >
+      <mat-icon class="dot-extra-icon">more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>today icon</mat-icon>
+        <span>Изменить</span>
+      </button>
+      <button mat-menu-item (click)="remove(current_el.id)">
+        <mat-icon class="clear-icon">clear</mat-icon>
+        <span>Отменить</span>
+      </button>
+    </mat-menu>
+  </div>
+</li>

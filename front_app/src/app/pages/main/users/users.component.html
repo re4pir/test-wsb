@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="users-col pt-4 align-items-center justify-content-center">
+      <mat-form-field class="row col-12 col-md-9 col-lg-7">
+        <mat-icon class="users-icon">search</mat-icon>
+        <input class="users-input" matInput placeholder="Поиск" type="search" />
+      </mat-form-field>
+      <div class="col-12 col-md-9 col-lg-7">
+        <ng-container *ngFor="let user of users">
+          <app-user-card [user]="user"></app-user-card>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

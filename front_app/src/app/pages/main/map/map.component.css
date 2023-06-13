@@ -1,0 +1,87 @@
+.drag-container {
+  position: relative;
+  overflow: hidden;
+  max-width: 100vw;
+  max-height: 95vh;
+}
+
+.main {
+  display: flex;
+  background: url("../../../../assets/Blank.png") no-repeat;
+  background-position: center center;
+  background-size: 900px;
+  height: 90vh;
+  width: 100%;
+  z-index: 0;
+}
+
+.main__spaces {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.main__filters {
+  position: absolute;
+  left: 0%;
+}
+
+.main__zoom {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .main {
+    background-size: 900px;
+  }
+}
+@media (max-width: 992px) {
+  .main {
+    background-size: 768px;
+  }
+}
+@media (max-width: 768px) {
+  .main__zoom {
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    left: calc(100% - 45px);
+  }
+  .drag-container {
+    height: 92vh;
+  }
+  .drag-boundary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    overflow: hidden;
+    width: 200vw;
+    height: 150vh;
+    top: -25vh;
+    left: -50vw;
+  }
+  .main {
+    overflow: hidden;
+    background-size: 100%;
+    background-position: 50% 50%;
+    height: 552px;
+    width: 776px;
+  }
+}
+@media (max-width: 576px) {
+  .drag-boundary {
+    width: 400vw;
+    height: 200vh;
+    top: -50vh;
+    left: -150vw;
+  }
+  .main {
+    background-size: 100%;
+    background-position: 50% 50%;
+    height: 552px;
+    width: 776px;
+  }
+}

@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col justify-content-center">
+    <ul class="user-list list-reset">
+      <li
+        class="align-items-center flex user-item mb-2 ps-3 py-2 py-sm-3 ps-sm-3"
+      >
+        <div
+          class="me-2 me-sm-3 user-item-photo flex justify-content-center align-items-center"
+        >
+          {{ user.id }}
+        </div>
+        <div class="users-row w-100 justify-content-between">
+          <div class="col users-col">
+            <p class="user-item-name mb-0 mb-sm-1">{{ user.name }}</p>
+            <p class="user-item-descr mb-0 mb-sm-1">{{ user.descr }}</p>
+            <p class="user-item-status mb-0">{{ user.status }}</p>
+          </div>
+          <div class="flex align-items-center">
+            <p class="user-item-place p-sm-1">Место {{ user.placeId }}</p>
+            <button
+              mat-icon-button
+              [matMenuTriggerFor]="menu"
+              aria-label="Menu"
+            >
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <mat-icon>person</mat-icon>
+                <span>Открыть профиль</span>
+              </button>
+              <button mat-menu-item disabled>
+                <mat-icon>chat</mat-icon>
+                <span>Написать сообщение</span>
+              </button>
+            </mat-menu>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
