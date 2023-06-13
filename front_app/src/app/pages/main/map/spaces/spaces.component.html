@@ -1,0 +1,17 @@
+<div cdkDrag cdkDragBoundary=".main" class="places__container">
+  <div
+    class="btn-reset space__btn align-items-center"
+    [ngStyle]="{ top: place.positiony, left: place.positionx }"
+    [ngClass]="{ space__busy: !place.status, space__free: place.status }"
+  >
+    <p class="space__text text-center">{{ place.id }}</p>
+    <!-- <mat-progress-spinner
+      class="space__progressbar"
+      [diameter]="43"
+      strokeWidth="5"
+      mode="determinate"
+      value="{{ place.workload }}"
+      color="primary"
+    ></mat-progress-spinner> -->
+  </div>
+</div>

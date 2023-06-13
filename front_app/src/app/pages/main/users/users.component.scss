@@ -1,0 +1,20 @@
+.users-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.users-icon {
+    color: var(--color-dark-gray);
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+  text-align: center;
+  margin-right: -26px;
+  position: relative;
+  z-index: 1;
+  float: left;
+}
+
+.users-icon + .users-input{
+    padding-left: 26px;
+}

@@ -1,0 +1,97 @@
+<header class="header">
+  <div class="container">
+    <div class="header__row row">
+      <nav class="header__nav col flex">
+        <ul
+          class="header__nav-list list-reset flex justify-content-between col-5"
+        >
+          <li class="header__nav-item">
+            <a
+              routerLink="map"
+              routerLinkActive="active"
+              (click)="toggle()"
+              class="header__nav-link"
+              >Бронирование</a
+            >
+          </li>
+          <li class="header__nav-item">
+            <a
+              (click)="toggle()"
+              routerLink="users"
+              routerLinkActive="active"
+              class="header__nav-link"
+              >Сотрудники</a
+            >
+          </li>
+        </ul>
+        <div class="col-2 text-center">
+          <img
+            class="header__logo"
+            width="70px"
+            src="../../../assets/header_logo.svg"
+            alt="LOGO"
+          />
+        </div>
+        <ul
+          class="header__nav-list list-reset justify-content-between col-5 flex"
+        >
+          <li class="header__nav-item">
+            <a
+              (click)="toggle()"
+              routerLink="sch"
+              routerLinkActive="active"
+              class="header__nav-link"
+              >Расписание</a
+            >
+          </li>
+          <li class="header__nav-item">
+            <a
+              (click)="toggle()"
+              routerLink="acc"
+              routerLinkActive="active"
+              class="header__nav-link"
+              >Личный&nbsp;кабинет</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="header__container ps-2">
+    <nav class="header__nav-sm align-items-center">
+      <img
+        class="header__logo-sm"
+        width="70px"
+        src="../../../assets/header_logo-sm.svg"
+        alt="LOGO"
+      />
+      <button
+        class="header__burger btn-reset"
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        aria-label="Бургер меню"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button routerLink="map" mat-menu-item>
+          <mat-icon routerLinkActive="active-sm">map</mat-icon>
+          <span routerLinkActive="active-sm">Бронирование</span>
+        </button>
+        <button routerLink="users" mat-menu-item>
+          <mat-icon routerLinkActive="active-sm">group</mat-icon>
+          <span routerLinkActive="active-sm">Сотрудники</span>
+        </button>
+        <button routerLink="sch" mat-menu-item>
+          <mat-icon routerLinkActive="active-sm">schedule</mat-icon>
+          <span routerLinkActive="active-sm">Расписание</span>
+        </button>
+        <button routerLink="acc" mat-menu-item>
+          <mat-icon routerLinkActive="active-sm">person</mat-icon>
+          <span routerLinkActive="active-sm">Личный кабинет</span>
+        </button>
+      </mat-menu>
+    </nav>
+  </div>
+</header>
+<router-outlet></router-outlet>

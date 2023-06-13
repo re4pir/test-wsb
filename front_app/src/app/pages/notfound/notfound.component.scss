@@ -1,0 +1,15 @@
+.not-found__col{
+    display: flex;
+    flex-direction: column;
+}
+.not-found__btn{
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 15px 20px;
+    border-radius: 10px;
+    transition: 0.2s linear;
+}
+
+.not-found__btn:hover{
+    background-color: var(--color-primary-focus);
+}

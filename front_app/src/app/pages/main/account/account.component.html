@@ -1,0 +1,32 @@
+<main class="main">
+  <div class="container">
+    <div class="row text-center justify-content-center">
+      <div class="account__img mt-4 mb-3"></div>
+      <h2 class="account__name mb-1">
+        {{ user }}
+      </h2>
+      <p class="account__descr">Описание Описание Описание</p>
+      <div class="account__row row justify-content-center">
+        <div class="account__booking-history col-11 col-sm-10 col-md-7 col-lg-5 col-xl-4 px-2 px-sm-4 py-3 mb-3">
+          <h3 class="booking-history__title mb-3">История бронирования</h3>
+          <ul class="list-reset booking-history__list">
+            <app-history *ngFor="let i of history" [history_el]="i"></app-history>
+          </ul>
+          <button class="btn-reset account__btn pt-3 px-3">Управление историей бронирования...</button>
+        </div>
+        <div class="account__active-booking col-11 col-sm-10 col-md-7 col-lg-5 col-xl-4 px-2 px-sm-4 py-3 mb-3">
+          <h3 class="active-booking__title mb-3">Забронированные места</h3>
+          <ul class="list-reset active-booking__list">
+            <app-current *ngFor="let j of currents" [current_el]="j" (clickRemove)="clickRemove($event)"></app-current>
+          </ul>
+          <button class="btn-reset account__btn pt-3 pt-3 px-3">Управление активными бронированиями...</button>
+        </div>
+      </div>
+      <a
+        href="javascript:void(0)"
+        class="btn btn-lg btn-primary col-5 col-sm-3 account__logout-btn mb-3"
+        (click)="logout()"
+      >Выйти</a>
+    </div>
+  </div>
+</main>

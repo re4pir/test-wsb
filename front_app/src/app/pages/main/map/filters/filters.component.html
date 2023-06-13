@@ -1,0 +1,18 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav pe-4 pt-0" mode="side">
+    <p class="filter__title">Фильтры</p>
+    <div class="mat-drawer__checkboxes flex">
+      
+      <mat-checkbox color="primary">1 Монитор</mat-checkbox>
+      <mat-checkbox color="primary">2 Монитора</mat-checkbox>
+      <mat-checkbox color="primary">Много места</mat-checkbox>
+      <mat-checkbox color="primary">Тег 1</mat-checkbox>
+    </div>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <button mat-icon-button color="basic" (click)="drawer.toggle()">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
+</mat-drawer-container>
